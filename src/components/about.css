@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .heading::after {
+    content: "";
+    display: inline-block;
+    width: 8rem;
+    height: 10px;
+    background-image: url("../public/aboutImg2.png");
+    background-size: cover;
+    margin-left: 10px;
+    vertical-align: middle;
+    align-items: center;
+  }
+}

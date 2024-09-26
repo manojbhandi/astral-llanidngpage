@@ -1,0 +1,27 @@
+.group {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.group::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: #0060af;
+  transition: all 3s ease;
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+}
+
+.group:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.group:hover {
+  color: white; 
+}
