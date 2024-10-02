@@ -1,3 +1,4 @@
+'use client'
 import EmblaCarousel from "@/components/corousel/EmblaCarousel";
 import Navbar from "@/components/navbar";
 import { EmblaOptionsType } from 'embla-carousel'
