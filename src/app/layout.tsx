@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import CookieConsentBanner from "../../CookieConsent/CookieBotBanner";
+import Analytics from "../../GoogleAnalytics/analytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,7 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <CookieConsentBanner/>
+        {/* <Analytics/>
+        <CookieConsentBanner/> */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

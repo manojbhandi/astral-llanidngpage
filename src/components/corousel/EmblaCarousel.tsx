@@ -12,6 +12,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import CarouselText from '../carouselText'
 import rainbow from '../../public/rainbow.svg'
+import { externalImageLoader } from '../../../utils/data'
 
 type PropType = {
     slides: any
@@ -36,13 +37,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <section className="embla">
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container relative">
-                    {slides.map((img: any, index: number) => (
+                    {slides.map((slide: any, index: number) => (
                         <div className="embla__slide" key={index}>
                             <div className=" ">
-                                <CarouselText />
+                                <CarouselText
+                                    bannersTitle={slide.bannersTitle}
+                                    bannerDescription={slide.bannerDescription}
+                                    bannerButton={slide.bannerButton}
+                                />
                                 <Image
-                                    src={img}
-                                    // loader={externalImageLoader}
+                                    src={slide.bannerImageUrl} 
+                                    loader={externalImageLoader}
                                     width="0"
                                     height="0"
                                     // sizes="100vw"
@@ -50,7 +55,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                                     className='w-full h-[600px]'
                                     alt={`carousel Image${index}`}
                                 />
-                                
+
                             </div>
                         </div>
                     ))}
